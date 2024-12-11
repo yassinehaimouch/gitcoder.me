@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Font By IA-Fonts (https://github.com/iaolo/iA-Fonts) */
+@font-face {
+  font-family: "iAWriterQuattroS";
+  src: url("/fonts/iAWriterQuattroS-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-primary;
+  }
+}
