@@ -45,6 +45,17 @@ export default function Home() {
           </h2>
           <ul className="space-y-3 mt-3">
             <li className="text-sm">Open to job opportunities</li>
+            <li className="text-sm">
+              Creator of{" "}
+              <Link
+                href="https://gitcoders.dev/"
+                className="text-primary/70"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Gitcoders.dev
+              </Link>
+            </li>
             <li className="text-sm">Public speaker & Content creator</li>
           </ul>
         </section>
@@ -124,6 +135,15 @@ export default function Home() {
               >
                 X
               </Link>
+              ,{" "}
+              <Link
+                href="https://instagram.com/gitcoder"
+                className="text-primary/70"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </Link>
             </li>
             <li className="text-sm">
               Connect with me on{" "}
@@ -134,6 +154,28 @@ export default function Home() {
                 rel="noopener noreferrer"
               >
                 LinkedIn
+              </Link>
+            </li>
+            <li className="text-sm">
+              Subscribe on{" "}
+              <Link
+                href="https://www.youtube.com/@thegitcoder"
+                className="text-primary/70"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                YouTube
+              </Link>
+            </li>
+            <li className="text-sm">
+              Join my{" "}
+              <Link
+                href="https://discord.gg/5TnK7wuzw6"
+                className="text-primary/70"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Discord
               </Link>
             </li>
             <li className="text-sm">
