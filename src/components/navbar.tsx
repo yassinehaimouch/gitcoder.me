@@ -88,11 +88,11 @@ const Navbar = () => {
           </svg>
         </button>
 
-        <div className="hidden md:flex md:items-center">
+        {/* Desktop Navigation links - ONLY removed overflow-x-auto */}
+        <div className="hidden md:block no-scrollbar">
           <ul className="flex items-center gap-1 sm:gap-2 md:gap-4 px-1">
             {navItems.map((item) => {
               const isActive = item.isExternal ? false : pathname === item.link;
-
               return (
                 <li key={item.label}>
                   <Link
@@ -108,9 +108,6 @@ const Navbar = () => {
                     rel={item.isExternal ? "noopener noreferrer" : undefined}
                   >
                     {item.label}
-                    {isActive && (
-                      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-secondary rounded-full"></span>
-                    )}
                   </Link>
                 </li>
               );
