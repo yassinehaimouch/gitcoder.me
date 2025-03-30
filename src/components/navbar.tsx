@@ -88,8 +88,7 @@ const Navbar = () => {
           </svg>
         </button>
 
-        {/* Desktop Navigation links */}
-        <div className="hidden md:block overflow-x-auto no-scrollbar">
+        <div className="hidden md:flex md:items-center">
           <ul className="flex items-center gap-1 sm:gap-2 md:gap-4 px-1">
             {navItems.map((item) => {
               const isActive = item.isExternal ? false : pathname === item.link;
