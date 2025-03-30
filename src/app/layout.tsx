@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import Navbar from "../components/navbar";
 import "./globals.css";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Yassine Haimouch | Software Engineer",
@@ -35,7 +37,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+      <body className={`antialiased max-w-3xl my-32 mx-auto px-5`}>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
       <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
     </html>
   );
