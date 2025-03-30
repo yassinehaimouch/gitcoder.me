@@ -52,7 +52,7 @@ const ArticlePage = ({ params }: ArticleProps) => {
   if (!post) notFound();
 
   return (
-    <div className="max-w-3xl mx-auto mb-64 mt-8 md:mt-16 px-4 sm:px-6">
+    <div className="max-w-3xl mx-auto mb-64 mt-8 md:mt-16 sm:px-6">
       <header className="mb-8">
         <div className="flex items-center justify-between mb-6">
           <Link
