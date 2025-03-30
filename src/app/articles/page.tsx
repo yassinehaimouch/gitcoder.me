@@ -50,7 +50,7 @@ const Articles = () => {
   );
 
   return (
-    <div className="max-w-3xl mx-auto px-6 mt-16 mb-32">
+    <div className="max-w-3xl mx-auto mt-16 mb-32">
       <h1 className="text-xl md:text-2xl font-bold tracking-tight mb-10 text-secondary relative inline-block">
         Articles
         <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-accent opacity-70"></span>

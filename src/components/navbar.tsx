@@ -9,6 +9,13 @@ const Navbar = () => {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Common background style for both header and mobile menu
+  const bgStyle =
+    isScrolled || mobileMenuOpen
+      ? "backdrop-blur-md bg-background/80"
+      : "bg-transparent";
 
   // Check if scrolled to add background blur
   useEffect(() => {
@@ -28,17 +35,16 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "py-3 backdrop-blur-md bg-background/80"
-          : "py-5 bg-transparent"
-      }`}
+        isScrolled || mobileMenuOpen ? "py-3" : "py-5"
+      } ${bgStyle}`}
     >
-      <nav className="max-w-5xl mx-auto px-6 flex items-center justify-between">
+      <nav className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Logo with hover/focus effect */}
         <Link
           href="/"
           className="group relative rounded-full overflow-hidden transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none"
           aria-label="Home"
+          onClick={() => setMobileMenuOpen(false)}
         >
           <div className="absolute inset-0 bg-gradient-to-tr from-secondary to-accent opacity-0 group-hover:opacity-30 group-focus:opacity-30 transition-opacity duration-300 rounded-full"></div>
           <Image
@@ -51,8 +57,39 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* Navigation links */}
-        <div className="overflow-x-auto no-scrollbar">
+        {/* Mobile menu button */}
+        <button
+          className="md:hidden p-2 rounded-md text-primary hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-expanded={mobileMenuOpen}
+          aria-label="Toggle menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            {mobileMenuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            )}
+          </svg>
+        </button>
+
+        {/* Desktop Navigation links */}
+        <div className="hidden md:block overflow-x-auto no-scrollbar">
           <ul className="flex items-center gap-1 sm:gap-2 md:gap-4 px-1">
             {navItems.map((item) => {
               const isActive = item.isExternal ? false : pathname === item.link;
@@ -82,6 +119,37 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
+
+      {/* Mobile menu dropdown */}
+      {mobileMenuOpen && (
+        <div className={`md:hidden px-4 pt-2 pb-4 ${bgStyle}`}>
+          <ul className="flex flex-col space-y-2">
+            {navItems.map((item) => {
+              const isActive = item.isExternal ? false : pathname === item.link;
+
+              return (
+                <li key={item.label}>
+                  <Link
+                    className={`block py-2 px-3 rounded-md text-base capitalize font-medium transition-all duration-300
+                      ${
+                        isActive
+                          ? "text-secondary bg-secondary/10"
+                          : "text-primary hover:text-accent hover:bg-accent/10"
+                      }
+                      focus:outline-none focus-visible:ring-2 focus-visible:ring-accent`}
+                    href={item.link}
+                    target={item.isExternal ? "_blank" : undefined}
+                    rel={item.isExternal ? "noopener noreferrer" : undefined}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
     </header>
   );
 };
