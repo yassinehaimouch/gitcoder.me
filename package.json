@@ -13,7 +13,7 @@
     "contentlayer": "^0.3.4",
     "date-fns": "^4.1.0",
     "next": "15.1.0",
-    "next-contentlayer": "^0.3.4",
+    "next-contentlayer": "next",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0"
