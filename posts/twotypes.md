@@ -2,6 +2,7 @@
 title: Two Different Types of Frontend Developers
 date: 2024-09-25
 summary: "Frontend development is a broad field, but developers often fall into two distinct categories based on their approach and understanding of the technology. Let’s dive into these two types of frontend developers and explore the key differences."
+image: "https://images.unsplash.com/photo-1553575141-67b60994cfd3?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 ---
 
 Frontend development is a broad field, but developers often fall into two distinct categories based on their approach and understanding of the technology. Let’s dive into these two types of frontend developers and explore the key differences.

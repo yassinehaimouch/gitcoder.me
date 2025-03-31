@@ -2,6 +2,7 @@
 
 import frontendMd from './frontend.md.json' assert { type: 'json' }
 import reactuilibMd from './reactuilib.md.json' assert { type: 'json' }
+import tailwindcsstipsMd from './tailwindcsstips.md.json' assert { type: 'json' }
 import twotypesMd from './twotypes.md.json' assert { type: 'json' }
 
-export const allPosts = [frontendMd, reactuilibMd, twotypesMd]
+export const allPosts = [frontendMd, reactuilibMd, tailwindcsstipsMd, twotypesMd]
