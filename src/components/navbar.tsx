@@ -118,7 +118,7 @@ const Navbar = () => {
 
       {/* Mobile menu dropdown */}
       {mobileMenuOpen && (
-        <div className={`md:hidden px-4 pt-2 pb-4 ${bgStyle}`}>
+        <div className="md:hidden px-4 py-4">
           <ul className="flex flex-col space-y-2">
             {navItems.map((item) => {
               const isActive = item.isExternal ? false : pathname === item.link;
