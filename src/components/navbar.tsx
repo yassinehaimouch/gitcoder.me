@@ -51,7 +51,7 @@ const Navbar = () => {
             className="rounded-full transition-transform duration-500 group-hover:scale-110 group-focus:scale-110"
             height={44}
             width={44}
-            src="/assets/logo.PNG"
+            src="/assets/me.png"
             alt="logo"
             priority
           />
