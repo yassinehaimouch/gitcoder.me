@@ -32,7 +32,7 @@ export const projects = [
     title: "HTML Semantic Recipes",
     description:
       "A Visual Studio Code extension providing semantic HTML5 markup patterns for common UI components.",
-    image: "/assets/projects/html.jpg",
+    image: "/assets/projects/cover-html.jpg",
     tags: ["Vscode", "Html", "React", "Vue", "Angular"],
     demoLink:
       "https://marketplace.visualstudio.com/items?itemName=gitcoder.vsc-html-semantic-recipes",
@@ -43,7 +43,7 @@ export const projects = [
     title: "Gitcoders Platform",
     description:
       "Master the skills with our complete, industry-focused frontend development training",
-    image: "/assets/projects/gitcoders.jpg",
+    image: "/assets/projects/gitcoders-cover.jpg",
     tags: ["Next.js", "TypeScript", "Tailwind"],
     demoLink: "https://gitcoders.dev",
     githubLink: "https://github.com/GitCodersHub",
