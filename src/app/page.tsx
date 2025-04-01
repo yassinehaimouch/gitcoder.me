@@ -10,7 +10,7 @@ export default function Home() {
           Yassine Haimouch - Software Engineer Portfolio
         </h1>
         <div className="space-y-4 text-primary">
-          <p className="text-lg font-bold">
+          <p className="text-xl md:leading-10 md:text-[28px] font-bold">
             I am a software engineer specialized in web development, crafting
             modern digital solutions and user-centered experiences.
           </p>
