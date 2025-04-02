@@ -37,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased max-w-3xl my-32 mx-auto px-5`}>
+      <body className={`antialiased max-w-3xl mt-32 mb-10 mx-auto px-5`}>
         <Navbar />
         {children}
         <Footer />
