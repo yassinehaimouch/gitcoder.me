@@ -4,10 +4,11 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { navItems } from "@/utils/constants";
+import { GoArrowUpRight } from "react-icons/go";
 
 const Navbar = () => {
   const pathname = usePathname();
-  const [mounted, setMounted] = useState(false);
+  // const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -17,10 +18,7 @@ const Navbar = () => {
       ? "backdrop-blur-md bg-background/80"
       : "bg-transparent";
 
-  // Check if scrolled to add background blur
   useEffect(() => {
-    setMounted(true);
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
@@ -28,9 +26,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // Only render client-side to use pathname
-  if (!mounted) return null;
 
   return (
     <header
@@ -90,7 +85,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation links - ONLY removed overflow-x-auto */}
         <div className="hidden md:block no-scrollbar">
-          <ul className="flex items-center gap-1 sm:gap-2 md:gap-4 px-1">
+          <ul className="flex items-center gap-1 sm:gap-2 px-1">
             {navItems.map((item) => {
               const isActive = item.isExternal ? false : pathname === item.link;
               return (
@@ -102,12 +97,14 @@ const Navbar = () => {
                           ? "text-secondary"
                           : "text-primary hover:text-accent"
                       }
+                      ${item.isExternal && "flex items-center gap-2"}
                       focus:outline-none focus-visible:ring-2 focus-visible:ring-accent`}
                     href={item.link}
                     target={item.isExternal ? "_blank" : undefined}
                     rel={item.isExternal ? "noopener noreferrer" : undefined}
                   >
                     {item.label}
+                    {item.isExternal && <GoArrowUpRight />}
                   </Link>
                 </li>
               );
@@ -132,6 +129,7 @@ const Navbar = () => {
                           ? "text-secondary bg-secondary/10"
                           : "text-primary hover:text-accent hover:bg-accent/10"
                       }
+                      ${item.isExternal && "flex items-center gap-2"}
                       focus:outline-none focus-visible:ring-2 focus-visible:ring-accent`}
                     href={item.link}
                     target={item.isExternal ? "_blank" : undefined}
@@ -139,6 +137,7 @@ const Navbar = () => {
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}
+                    {item.isExternal && <GoArrowUpRight />}
                   </Link>
                 </li>
               );

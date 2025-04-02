@@ -2,7 +2,6 @@ import Image from "next/image";
 
 export default function NotFound() {
   return (
-    // Using calc to account for navbar (~80px) and footer (~60px) and any padding
     <Image
       alt="404"
       height="521"
