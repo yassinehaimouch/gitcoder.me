@@ -15,14 +15,14 @@ const Footer = () => {
         <div className="text-xs flex gap-4">
           <Link
             target="_blank"
-            className="text-accent flex items-center gap-2 hover:text-secondary duration-300"
+            className="text-accent flex items-center gap-2 hover:text-accent/80 duration-300"
             href="https://www.instagram.com/gitcoder"
           >
             <GoArrowUpRight />
             Instagram
           </Link>
           <Link
-            className="text-accent flex items-center gap-2 hover:text-secondary duration-300"
+            className="text-accent flex items-center gap-2 hover:text-accent/80 duration-300"
             href="mailto:yassinehaimouch@proton.me"
           >
             <GoArrowUpRight />
