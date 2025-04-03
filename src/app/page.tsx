@@ -53,13 +53,11 @@ export default function Home() {
             >
               Current
             </h2>
-            <ul className="space-y-3 border-l border-border pl-5">
+            <ul className="space-y-3 list-disc pl-4">
               <li className="text-sm text-primary relative">
-                <span className="absolute w-1.5 h-1.5 bg-accent rounded-full -left-[26px] top-1.5"></span>
                 Open to job opportunities
               </li>
               <li className="text-sm text-primary relative">
-                <span className="absolute w-1.5 h-1.5 bg-accent rounded-full -left-[26px] top-1.5"></span>
                 Creator of{" "}
                 <Link
                   href="https://gitcoders.dev/"
@@ -71,7 +69,6 @@ export default function Home() {
                 </Link>
               </li>
               <li className="text-sm text-primary relative">
-                <span className="absolute w-1.5 h-1.5 bg-accent rounded-full -left-[26px] top-1.5"></span>
                 Public speaker & Content creator
               </li>
             </ul>
@@ -88,9 +85,8 @@ export default function Home() {
             >
               Previous
             </h2>
-            <ul className="space-y-3 border-l border-border pl-5">
+            <ul className="space-y-3 list-disc pl-4">
               <li className="text-sm text-primary relative">
-                <span className="absolute w-1.5 h-1.5 bg-accent rounded-full -left-[26px] top-1.5"></span>
                 Senior Frontend Developer at{" "}
                 <Link
                   href="https://www.codiadev.it/"
@@ -102,7 +98,6 @@ export default function Home() {
                 </Link>
               </li>
               <li className="text-sm text-primary relative">
-                <span className="absolute w-1.5 h-1.5 bg-accent rounded-full -left-[26px] top-1.5"></span>
                 Full-Stack Instructor at{" "}
                 <Link
                   href="https://gomycode.com/ma/fr/"
@@ -114,7 +109,6 @@ export default function Home() {
                 </Link>
               </li>
               <li className="text-sm text-primary relative">
-                <span className="absolute w-1.5 h-1.5 bg-accent rounded-full -left-[26px] top-1.5"></span>
                 Frontend Developer at{" "}
                 <Link
                   href="https://www.blocxs.one/"
@@ -211,9 +205,8 @@ export default function Home() {
           >
             Interview and talks
           </h2>
-          <ul className="space-y-3 border-l border-border pl-5">
+          <ul className="space-y-3 list-disc pl-4">
             <li className="text-sm text-primary relative">
-              <span className="absolute w-1.5 h-1.5 bg-accent rounded-full -left-[26px] top-1.5"></span>
               ReactJS Discussion on{" "}
               <Link
                 href="https://www.youtube.com/watch?v=7qTAxmutZzE"
