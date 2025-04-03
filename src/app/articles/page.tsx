@@ -15,7 +15,7 @@ const ArticleCard = (post: Post) => {
       <Link href={post.url} className="group relative block">
         <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
           <div className="flex-1">
-            <h2 className="text-secondary font-medium text-lg group-hover:text-secondary/90 transition-all duration-300 ease-in-out">
+            <h2 className="text-secondary font-bold text-lg group-hover:text-secondary/90 transition-all duration-300 ease-in-out">
               {post.title}
             </h2>
 
