@@ -61,7 +61,7 @@ const Articles = () => {
           No articles published yet. Check back soon!
         </p>
       ) : (
-        <div className="space-y-1 pl-4">
+        <div className="space-y-1">
           {posts.map((post) => (
             <ArticleCard key={post._id} {...post} />
           ))}

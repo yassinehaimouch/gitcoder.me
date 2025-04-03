@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+import { GoArrowUpRight } from "react-icons/go";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -9,17 +12,22 @@ const Footer = () => {
         <p className="text-xs">
           © Yassine Haimouch (@gitcoder) — {currentYear}
         </p>
-        <div className="text-xs">
-          <p>
-            Built with
-            <span className="mx-1 text-accent hover:text-accent/80 transition-colors duration-200">
-              Next.js
-            </span>
-            and
-            <span className="mx-1 text-accent hover:text-accent/80 transition-colors duration-200">
-              Tailwind CSS
-            </span>
-          </p>
+        <div className="text-xs flex gap-4">
+          <Link
+            target="_blank"
+            className="text-accent flex items-center gap-2 hover:text-secondary duration-300"
+            href="https://www.instagram.com/gitcoder"
+          >
+            <GoArrowUpRight />
+            Instagram
+          </Link>
+          <Link
+            className="text-accent flex items-center gap-2 hover:text-secondary duration-300"
+            href="mailto:yassinehaimouch@proton.me"
+          >
+            <GoArrowUpRight />
+            Email
+          </Link>
         </div>
       </div>
     </footer>

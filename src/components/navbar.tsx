@@ -8,7 +8,6 @@ import { GoArrowUpRight } from "react-icons/go";
 
 const Navbar = () => {
   const pathname = usePathname();
-  // const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 

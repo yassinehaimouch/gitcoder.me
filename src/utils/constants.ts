@@ -10,6 +10,11 @@ export const navItems = [
     isExternal: true,
   },
   {
+    label: "linkedIn",
+    link: "https://www.linkedin.com/in/yassinehaimouch/",
+    isExternal: true,
+  },
+  {
     label: "twitter",
     link: "https://x.com/thegitcoder",
     isExternal: true,
