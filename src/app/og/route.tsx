@@ -7,6 +7,10 @@ export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
   const postTitle = searchParams.get("title");
 
+  const fontData = await fetch(
+    new URL(`${req.nextUrl.origin}/fonts/NanumPenScript-Regular.ttf`)
+  ).then((res) => res.arrayBuffer());
+
   return new ImageResponse(
     (
       <div
@@ -25,13 +29,14 @@ export async function GET(req: NextRequest) {
             marginLeft: 190,
             marginRight: 190,
             display: "flex",
-            fontSize: 130,
+            fontSize: 150,
             letterSpacing: "-0.05em",
             fontStyle: "normal",
             fontWeight: "bold",
             color: "#f9f4da",
-            lineHeight: "120px",
+            lineHeight: "150px",
             whiteSpace: "pre-wrap",
+            fontFamily: "NanumPenScript",
           }}
         >
           {postTitle}
@@ -41,6 +46,14 @@ export async function GET(req: NextRequest) {
     {
       width: 1920,
       height: 1080,
+      fonts: [
+        {
+          name: "NanumPenScript",
+          data: fontData,
+          style: "normal",
+          weight: 400,
+        },
+      ],
     }
   );
 }
