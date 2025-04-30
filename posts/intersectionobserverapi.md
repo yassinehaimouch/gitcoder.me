@@ -1,5 +1,5 @@
 ---
-title: Intersection Detection Methods: Performance and Approaches
+title: "Intersection Detection Methods: Performance and Approaches"
 date: 2025-04-30
 summary: "The Intersection Observer API offers significant performance advantages over traditional JavaScript intersection detection. While vanilla JavaScript methods require manual calculation on each frame, the Observer API provides a more efficient, event-driven approach."
 image: "https://images.unsplash.com/photo-1745172366995-a55968e94797?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -10,6 +10,7 @@ image: "https://images.unsplash.com/photo-1745172366995-a55968e94797?q=80&w=3540
 The Intersection Observer API offers significant performance advantages over traditional JavaScript intersection detection. While vanilla JavaScript methods require manual calculation on each frame, the Observer API provides a more efficient, event-driven approach.
 
 ## Vanilla JavaScript Intersection:
+
 - Your first approach uses `getBoundingClientRect()` and manual collision detection.
 - This method runs every 50ms regardless of element positions, causing unnecessary calculations and potential performance issues.
 
@@ -34,6 +35,7 @@ setInterval(() => {
 ```
 
 ## Intersection Observer API - The Observer approach is more efficient:
+
 - **Browser-Native Optimization**: The browser handles intersection calculations internally, often with hardware acceleration.
 - **Event-Driven**: Only triggers callbacks when intersection status changes, not on a timer.
 - **Asynchronous**: Runs outside the main thread, preventing UI blocking.
@@ -41,7 +43,7 @@ setInterval(() => {
 
 ```javascript
 // Intersection Observer API approach
-const target = document.querySelector('.target-element');
+const target = document.querySelector(".target-element");
 const observer = new IntersectionObserver(
   ([entry]) => {
     if (entry.isIntersecting) {
