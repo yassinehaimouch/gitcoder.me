@@ -12,70 +12,7 @@
 }
 
 @layer base {
-  /* Ensure background is on both html and body */
-  html {
-    @apply bg-background;
-  }
-
   body {
     @apply bg-background text-primary;
-    /* Ensure background stays during transitions */
-    isolation: isolate;
   }
-}
-
-/* View Transitions with blur effect */
-@supports (view-transition-name: none) {
-  @media not (prefers-reduced-motion: reduce) {
-    /* Prevent the root from animating */
-    ::view-transition-group(root) {
-      animation: none;
-    }
-
-    ::view-transition-old(crossfade) {
-      animation: hide 0.4s cubic-bezier(0.6, 0, 0.8, 1) forwards;
-    }
-
-    ::view-transition-new(crossfade) {
-      opacity: 0;
-      animation: appear 0.6s ease 0.2s forwards;
-    }
-  }
-}
-
-@keyframes hide {
-  0% {
-    opacity: 1;
-    filter: blur(0);
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    filter: blur(4px);
-    transform: scale(0.96);
-  }
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-    filter: blur(4px);
-    transform: scale(0.96);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0);
-    transform: scale(1);
-  }
-}
-
-/* Ensure smooth rendering */
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Prevent layout shifts during transitions */
-[view-transition-name] {
-  contain: layout style;
 }

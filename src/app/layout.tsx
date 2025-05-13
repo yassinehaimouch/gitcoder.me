@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { unstable_ViewTransition as ViewTransition } from "react";
 import Script from "next/script";
 import Navbar from "../components/navbar";
 import "./globals.css";
@@ -43,9 +42,7 @@ export default function RootLayout({
         className={`antialiased max-w-3xl mt-32 mb-10 mx-auto px-5`}
       >
         <Navbar />
-        <main className="[contain:inline-size]">
-          <ViewTransition name="crossfade">{children}</ViewTransition>
-        </main>
+        {children}
         <Footer />
       </body>
       <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
