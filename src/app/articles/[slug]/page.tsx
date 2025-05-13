@@ -6,14 +6,15 @@ import { allPosts } from "../../../../.contentlayer/generated";
 import Image from "next/image";
 
 interface ArticleProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export const generateStaticParams = async () =>
   allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
 
-export const generateMetadata = ({ params }: ArticleProps) => {
-  const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
+export const generateMetadata = async ({ params }: ArticleProps) => {
+  const { slug } = await params;
+  const post = allPosts?.find((post) => post?._raw?.flattenedPath === slug);
   if (!post) notFound();
 
   const { title, date: publishedTime, summary: description } = post;
@@ -47,8 +48,9 @@ export const generateMetadata = ({ params }: ArticleProps) => {
   };
 };
 
-const ArticlePage = ({ params }: ArticleProps) => {
-  const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
+const ArticlePage = async ({ params }: ArticleProps) => {
+  const { slug } = await params;
+  const post = allPosts.find((post) => post?._raw?.flattenedPath === slug);
   if (!post) notFound();
 
   return (
