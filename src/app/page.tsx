@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { projects } from "@/utils/constants";
+import { GoArrowUpRight } from "react-icons/go";
 
 export default function Home() {
   return (
@@ -123,81 +123,37 @@ export default function Home() {
           </section>
         </div>
 
-        <section aria-labelledby="projects" className="relative">
+        {/* Updated Projects Section */}
+        <section
+          aria-labelledby="projects"
+          className="relative -mb-3 mt-16 sm:mt-32"
+        >
           <h2
-            id="projects"
+            id="previous-experience"
             className="text-xs uppercase tracking-wider font-medium text-secondary mb-4"
           >
             Projects
           </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="space-y-2">
             {projects.map((project) => (
-              <div
+              <Link
                 key={project.id}
-                className="group relative bg-card border border-border rounded-lg overflow-hidden hover:border-border-hover transition-colors duration-300"
+                href={project.demoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col gap-2 rounded-md text-sm hover:bg-accent/10 p-2"
               >
-                <div className="aspect-video w-full relative overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
+                <div className="flex items-center gap-1 text-accent">
+                  <span className="uppercase">{project.title}</span>
+                  <GoArrowUpRight />
                 </div>
-                <div className="p-4">
-                  <h3 className="text-primary font-medium mb-1">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted text-sm mb-3 line-clamp-2">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={`${project.id}-${tag}`}
-                        className="text-xs px-2 py-0.5 bg-border text-accent rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <Link
-                      href={project.demoLink}
-                      className="text-sm text-accent hover:text-accent/80 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm flex items-center gap-1"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Live Demo
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-3.5 w-3.5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </Link>
-                    <Link
-                      href={project.githubLink}
-                      className="text-sm text-primary hover:text-accent transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      GitHub
-                    </Link>
-                  </div>
-                </div>
-              </div>
+
+                <span>{project.description}</span>
+              </Link>
             ))}
           </div>
         </section>
+        {/* Interviews Section */}
         <section aria-labelledby="interviews" className="relative">
           <h2
             id="interviews"
