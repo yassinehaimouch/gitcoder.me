@@ -36,7 +36,7 @@ export const projects = [
     id: 1,
     title: "HTML Semantic Recipes",
     description:
-      "+66 installs A Visual Studio Code extension providing semantic HTML5 markup patterns for common UI components.",
+      "+70 installs A Visual Studio Code extension providing semantic HTML5 markup patterns for common UI components.",
     image: "/assets/projects/cover-html.jpg",
     tags: ["Vscode", "Html", "React", "Vue", "Angular"],
     demoLink:
