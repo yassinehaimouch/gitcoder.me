@@ -21,7 +21,7 @@ export const navItems = [
   },
   {
     label: "youtube",
-    link: "https://www.youtube.com/@thegitcoder",
+    link: "https://www.youtube.com/@thegitcoder?sub_confirmation=1",
     isExternal: true,
   },
   {
