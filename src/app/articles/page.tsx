@@ -5,7 +5,7 @@ import { allPosts } from "../../../.contentlayer/generated";
 import ArticleCard from "@/components/articlecard";
 
 export const metadata: Metadata = {
-  title: "Articles | Yassine Haimouch",
+  title: "Articles | Yassine H.",
   description: "Read my thoughts on software development, design, and more.",
 };
 

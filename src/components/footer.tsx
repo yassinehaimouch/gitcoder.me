@@ -9,9 +9,7 @@ const Footer = () => {
   return (
     <footer className="border-t border-border mt-20">
       <div className="max-w-3xl flex gap-4 flex-col-reverse md:flex-row md:justify-between mt-5 mx-auto">
-        <p className="text-xs">
-          © Yassine Haimouch (@gitcoder) — {currentYear}
-        </p>
+        <p className="text-xs">© Yassine H. (@gitcoder) — {currentYear}</p>
         <div className="text-xs flex gap-4">
           <Link
             target="_blank"

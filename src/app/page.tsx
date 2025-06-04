@@ -6,9 +6,7 @@ export default function Home() {
   return (
     <div className="max-w-3xl mx-auto mt-16 md:mt-24 mb-16">
       <header className="relative mb-16">
-        <h1 className="sr-only">
-          Yassine Haimouch - Software Engineer Portfolio
-        </h1>
+        <h1 className="sr-only">Yassine H. - Software Engineer Portfolio</h1>
         <div className="space-y-4 text-primary">
           <p className="text-xl md:leading-10 md:text-[28px] font-bold">
             I am a software engineer specialized in web development, crafting
