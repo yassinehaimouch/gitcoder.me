@@ -6,12 +6,12 @@ export const navItems = [
   },
   {
     label: "github",
-    link: "https://github.com/yassinehaimouch",
+    link: "https://github.com/letyassine",
     isExternal: true,
   },
   {
     label: "linkedIn",
-    link: "https://www.linkedin.com/in/yassinehaimouch/",
+    link: "https://www.linkedin.com/in/letyassine/",
     isExternal: true,
   },
   {
@@ -41,7 +41,7 @@ export const projects = [
     tags: ["Vscode", "Html", "React", "Vue", "Angular"],
     demoLink:
       "https://marketplace.visualstudio.com/items?itemName=gitcoder.vsc-html-semantic-recipes",
-    githubLink: "https://github.com/yassinehaimouch/vsc-html-semantic-recipes",
+    githubLink: "https://github.com/letyassine/vsc-html-semantic-recipes",
   },
   {
     id: 2,
